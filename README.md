@@ -108,6 +108,36 @@ Average reconstruction loss:
 These values represent the optimization results obtained using the current implementation.
 
 ---
+## Final Estimated Equation
+
+Using the current optimization pipeline, the estimated parametric curve is
+
+$$
+\begin{aligned}
+x(t) &= t\cos(30.04470981^\circ)
+- e^{0.03001465|t|}
+\sin(0.3t)\sin(30.04470981^\circ)
++ 55.02232105,\\[1em]
+y(t) &= 42
++ t\sin(30.04470981^\circ)
++ e^{0.03001465|t|}
+\sin(0.3t)\cos(30.04470981^\circ),
+\end{aligned}
+$$
+
+where
+
+$$
+6 \le t \le 60.
+$$
+
+The estimated unknown parameters are:
+
+| Parameter | Value |
+|-----------|------:|
+| $\theta$ | $30.04470981^\circ$ |
+| $M$ | $0.03001465$ |
+| $X$ | $55.02232105$ |
 
 ## Technologies Used
 
