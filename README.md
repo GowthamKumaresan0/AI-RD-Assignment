@@ -88,6 +88,96 @@ python main.py
 ```
 
 ---
+# AI R&D Internship Assignment
+
+## Overview
+
+This project presents a solution for an AI Research and Development internship assignment. The objective is to estimate the unknown parameters of a parametric curve from a set of unordered two-dimensional points. The solution reconstructs the curve, models the mathematical relationship, and estimates the unknown parameters using numerical optimization techniques.
+
+---
+
+## Problem Statement
+
+The given parametric equations are
+
+$$
+x(t)=t\cos(\theta)-e^{M|t|}\sin(0.3t)\sin(\theta)+X
+$$
+
+$$
+y(t)=42+t\sin(\theta)+e^{M|t|}\sin(0.3t)\cos(\theta)
+$$
+
+where
+
+| Parameter | Range |
+|-----------|-------|
+| $t$ | $6 \le t \le 60$ |
+| $\theta$ | $0^\circ < \theta < 50^\circ$ |
+| $M$ | $-0.05 < M < 0.05$ |
+| $X$ | $0 < X < 100$ |
+
+The objective is to estimate the unknown values of **θ**, **M**, and **X** that best reproduce the provided dataset.
+
+---
+
+## Methodology
+
+The implemented solution follows these steps:
+
+1. Load the dataset containing unordered 2D points.
+2. Recover a continuous ordering of the points using a nearest-neighbor traversal.
+3. Define the mathematical model of the parametric curve.
+4. Formulate an optimization objective based on the reconstruction error.
+5. Estimate the unknown parameters using the Differential Evolution algorithm provided by SciPy.
+
+---
+
+## Technologies Used
+
+- Python 3
+- NumPy
+- Pandas
+- SciPy
+- Matplotlib
+
+---
+
+## Current Results
+
+Estimated parameters:
+
+| Parameter | Value |
+|-----------|--------:|
+| θ | 30.04470981° |
+| M | 0.03001465 |
+| X | 55.02232105 |
+
+Average reconstruction loss:
+
+```
+0.24447060
+```
+
+These values represent the current optimization result obtained from the implemented pipeline.
+
+---
+
+## How to Run
+
+Install the required packages
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the project
+
+```bash
+python main.py
+```
+
+---
 
 ## References
 
