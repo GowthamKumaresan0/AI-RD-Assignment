@@ -2,31 +2,23 @@
 
 ## Overview
 
-This project is a solution for the AI Research & Development Internship Assignment.
+This project presents a solution for an AI Research and Development internship assignment. The objective is to estimate the unknown parameters of a parametric curve from a set of unordered two-dimensional points. The solution reconstructs the curve, models the mathematical relationship, and estimates the unknown parameters using numerical optimization techniques.
 
-The objective is to estimate the unknown parameters of a parametric curve from a given set of unordered 2D points. The unknown parameters are:
+---
 
-- θ (Theta)
-- M
-- X
+## Problem Statement
 
-The dataset consists of 1500 unordered `(x, y)` coordinates sampled from the following parametric equation.
-
-## Parametric Curve
-
-The curve is defined by the following parametric equations:
+The given parametric equations are
 
 $$
-x(t) = t\cos(\theta) - e^{M|t|}\sin(0.3t)\sin(\theta) + X
+x(t)=t\cos(\theta)-e^{M|t|}\sin(0.3t)\sin(\theta)+X
 $$
 
 $$
-y(t) = 42 + t\sin(\theta) + e^{M|t|}\sin(0.3t)\cos(\theta)
+y(t)=42+t\sin(\theta)+e^{M|t|}\sin(0.3t)\cos(\theta)
 $$
 
 where
-
-### Parameter Constraints
 
 | Parameter | Range |
 |-----------|-------|
@@ -35,117 +27,25 @@ where
 | $M$ | $-0.05 < M < 0.05$ |
 | $X$ | $0 < X < 100$ |
 
-The goal is to recover the unknown parameters that best reconstruct the original curve.
+The objective is to estimate the unknown values of **θ**, **M**, and **X** that best reproduce the provided dataset.
 
 ---
 
-# Project Structure
+## Methodology
 
-```
-AI-RD-Assignment/
-│
-├── data/
-│   └── xy_data.csv
-│
-├── src/
-│   ├── model.py
-│   ├── optimizer.py
-│   ├── order_points.py
-│   ├── utils.py
-│   └── visualize.py
-│
-├── output/
-│
-├── main.py
-├── requirements.txt
-└── README.md
-```
+The implemented solution follows these steps:
+
+1. Load the dataset containing unordered 2D points.
+2. Recover a continuous ordering of the points using a nearest-neighbor traversal.
+3. Define the mathematical model of the parametric curve.
+4. Formulate an optimization objective based on the reconstruction error.
+5. Estimate the unknown parameters using the Differential Evolution algorithm provided by SciPy.
 
 ---
 
-# Approach
+## Technologies Used
 
-The solution follows these steps:
-
-1. Load the dataset.
-2. Recover a continuous ordering of the unordered points using a nearest-neighbor traversal.
-3. Define the parametric curve model.
-4. Estimate the unknown parameters using Differential Evolution.
-5. Minimize the average Euclidean distance between predicted and observed points.
-
----
-
-# Optimization
-
-The optimization uses SciPy's Differential Evolution algorithm.
-
-Optimization variables:
-
-- θ ∈ [0°, 50°]
-- M ∈ [-0.05, 0.05]
-- X ∈ [0, 100]
-
-Objective:
-
-Minimize the mean Euclidean distance between predicted and observed points.
-
----
-
-# Current Results
-
-Current optimized parameters:
-
-| Parameter | Value |
-|-----------|---------:|
-| θ | 30.04470981° |
-| M | 0.03001465 |
-| X | 55.02232105 |
-
-Loss:
-
-```
-0.24447060
-```
-
-These values are obtained using the current optimization pipeline and serve as an initial approximation.
-
----
-
-# Installation
-
-Clone the repository
-
-```bash
-git clone <repository-url>
-```
-
-Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# Running
-
-Execute
-
-```bash
-python main.py
-```
-
-The program will:
-
-- Load the dataset
-- Order the points
-- Optimize the unknown parameters
-- Display the estimated values
-
----
-
-# Libraries Used
-
+- Python 3
 - NumPy
 - Pandas
 - SciPy
@@ -153,29 +53,60 @@ The program will:
 
 ---
 
-# Future Improvements
+## Current Results
 
-Possible enhancements include:
+Estimated parameters:
 
-- Arc-length parameterization
-- Spline interpolation
-- Local optimization refinement
-- Improved point-order reconstruction
-- Lower L1 reconstruction error
-- Curve visualization comparing prediction and ground truth
+| Parameter | Value |
+|-----------|--------:|
+| θ | 30.04470981° |
+| M | 0.03001465 |
+| X | 55.02232105 |
+
+Average reconstruction loss:
+
+```
+0.24447060
+```
+
+These values represent the current optimization result obtained from the implemented pipeline.
 
 ---
 
-# Author
+## How to Run
+
+Install the required packages
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the project
+
+```bash
+python main.py
+```
+
+---
+
+## References
+
+1. Virtanen, P., et al. (2020). *SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python*. Nature Methods, 17, 261–272.
+
+2. Harris, C. R., et al. (2020). *Array Programming with NumPy*. Nature, 585, 357–362.
+
+3. McKinney, W. (2010). *Data Structures for Statistical Computing in Python*. Proceedings of the 9th Python in Science Conference.
+
+4. Hunter, J. D. (2007). *Matplotlib: A 2D Graphics Environment*. Computing in Science & Engineering.
+
+5. The mathematical formulation and parameter constraints are taken directly from the internship assignment document provided by the organization.
+
+---
+
+## Author
 
 **Gowtham Kumaresan**
 
-B.Tech Artificial Intelligence and Data Science
+B.Tech – Artificial Intelligence and Data Science
 
 Amrita Vishwa Vidyapeetham
-
----
-
-# License
-
-This repository is created solely for the AI Research & Development Internship Assignment.
