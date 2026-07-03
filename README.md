@@ -174,7 +174,7 @@ Potential enhancements for this project include:
 
 ## Acknowledgements
 
-This project was implemented using Python together with the NumPy, Pandas, SciPy, and Matplotlib libraries. The mathematical equations, parameter constraints, and dataset were provided as part of the AI Research & Development Internship Assignment. The implementation, optimization workflow, and project organization in this repository were developed specifically for this submission.
+This project was implemented using Python together with the NumPy, Pandas, SciPy, and Matplotlib libraries. The numerical formulae, variable constraints, and information were provided as part of the AI Research & Development Internship Assignment. The implementation, optimization workflow, and project organization in this repository were developed specifically for this submission.
 
 ---
 
