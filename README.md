@@ -2,7 +2,8 @@
 
 ## Overview
 
-This repository contains my solution for the **AI Research & Development Internship Assignment**. The objective of this project is to estimate the unknown parameters of a parametric curve from a set of unordered two-dimensional points. The implementation focuses on reconstructing the curve and applying numerical optimization techniques to recover the unknown parameters that best fit the given dataset.
+This repository includes my solution for the AI Research & Development Internship Assignment.
+The goal of this project is to determine the unknown parameters of a parametric curve from a collection of unordered two-dimensional points.The implementation is focused on reconstructing the curve and using numerical optimization methods to find the best-fit parameters for the given dataset.
 
 ---
 
@@ -174,7 +175,7 @@ Potential enhancements for this project include:
 
 ## Acknowledgements
 
-This project was implemented using Python together with the NumPy, Pandas, SciPy, and Matplotlib libraries. The numerical formulae, variable constraints, and information were provided as part of the AI Research & Development Internship Assignment. The implementation, optimization workflow, and project organization in this repository were developed specifically for this submission.
+This project was implemented using Python along with the NumPy, Pandas, SciPy, and Matplotlib libraries. The numerical formulae, variable constraints, and information were provided as part of the AI Research & Development Internship Assignment.The implementation, optimization workflow, and project organization in this repository were developed specifically for this submission.
 
 ---
 
